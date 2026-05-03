@@ -1,5 +1,5 @@
 import { toggleTheme } from "./theme.js"
-import { openSidebar, closeSidebar } from "./sidebar.js"
+import { openSidebar, closeSidebar, closeSidebarOnEscPress } from "./sidebar.js"
 import { accordionOpenClose } from "./accordion.js"
 import { incrementCartProductsQuantity } from "./cartCount.js"
 
@@ -12,6 +12,8 @@ sidebarOpenButton.addEventListener("click", openSidebar)
 
 const sidebarCloseButtons = document.querySelectorAll("[data-js='sidebar-close']")
 sidebarCloseButtons.forEach(close => close.addEventListener("click", closeSidebar))
+
+document.addEventListener("keydown", closeSidebarOnEscPress)
 
 // ACCORDION
 
