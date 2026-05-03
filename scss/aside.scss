@@ -1,0 +1,130 @@
+@use "./variables.scss";
+
+// SIDEBAR LAYOUT 
+#sidebar {
+	position: fixed; 
+	inset: 0; 
+	z-index: 1000; 
+	visibility: visible;
+	pointer-events: all;
+
+	&.hidden {
+		visibility: hidden;
+		pointer-events: none;
+		transition: visibility 0s 300ms;
+	}
+}
+
+.sidebar__container {
+	position: relative;
+	width: 60%; 
+	height: 100%; 
+	margin-left: 0;
+	padding-block: 3rem; 
+	transition: margin-left 400ms ease; 
+	background-color: var(--background); 
+}
+
+.sidebar__close-button {
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	padding: .475rem;
+	background-color: var(--background);
+	color: var(--color); 
+	
+}
+
+#sidebar.hidden .sidebar__container {
+	margin-left: -100%;
+}
+
+.sidebar__categories-list {
+	display: flex;
+	flex-direction: column;
+
+	li {
+		padding-inline: 1rem; 
+		padding-block: .875rem;
+		border-bottom: 2px solid var(--border);
+	}
+
+	&.hidden {
+		display: none; 
+	}
+}
+
+.sidebar__overlay {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	opacity: 1;
+	transition: opacity 200ms ease;
+	background-color: var(--overlay);
+}
+
+#sidebar.hidden .sidebar__overlay {
+	opacity: 0; 
+}
+
+// ACCORDION 
+.sidebar__accordion {
+	display: flex;
+	flex-direction: column;
+	padding-inline: 1rem;
+	padding-block: .875rem;
+	border-bottom: 2px solid var(--border);
+}
+
+.sidebar__accordion-toggler {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1rem;
+	font-weight: 500;
+	background-color: transparent;
+	color: var(--foreground);
+}
+
+.sidebar__accordion-content {
+	display: flex;
+	flex-direction: column;
+	gap: .745rem;
+	padding-left: 2rem;
+	margin: 0;
+	font-size: .875rem;
+} 
+
+// RESPONSIVENESS
+@media(min-width: variables.$lg-screen) {
+	#sidebar {
+		position: relative;  
+		height: 100%; 
+		border-right: 2px solid var(--border); 
+		
+		&.hidden {
+			visibility: visible;
+			pointer-events: all;
+		}
+	}
+
+	.sidebar__container {
+		width: 100%; 
+		padding-block: 0; 
+		background-color: transparent;
+	}
+
+	.sidebar__overlay {
+		background: transparent; 
+	}
+
+	.sidebar__close-button {
+		display: none; 
+	}
+
+	#sidebar.hidden .sidebar__container {
+		margin-left: 0; 
+	}
+}
+

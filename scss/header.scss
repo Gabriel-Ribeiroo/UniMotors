@@ -1,0 +1,36 @@
+@use "./variables.scss";
+
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center; 
+	padding-inline: 1.5rem;
+	padding-block: 1.2rem;
+	border-bottom: 2px solid var(--border);
+}
+
+h1 {
+	font-size: clamp(1.3rem, 1rem + 1vw, 1.75rem)
+}
+
+.header__logo-container {
+	display: flex;
+	align-items: center;
+}
+
+.header__actions-container {
+	display: flex; 
+	gap: .5rem; 
+}
+
+.logo {
+	fill: var(--foreground); 
+	width: 10rem; 
+}
+
+// RESPONSIVENESS 
+@media(min-width: variables.$lg-screen) {
+	.header__sidebar-open {
+		display: none; 
+	}
+}

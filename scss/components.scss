@@ -1,0 +1,147 @@
+// BUTTONS
+.icon-button {
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	width: 2.5rem; 
+	height: 2.5rem;
+	background-color: var(--background); 
+	border: 2px solid var(--border); 
+	border-radius: 4px; 
+	transition: background-color 200ms ease; 
+	cursor: pointer; 
+
+	&:hover {
+		background-color: var(--button-hover); 
+	}
+
+	svg {
+		color: var(--foreground);
+	}
+
+	&:focus-visible {
+		border-color: var(--primary);
+	}
+}
+
+.button {
+	padding-inline: 1.2rem; 
+	padding-block: .475rem; 
+	font-weight: 600;
+	border-radius: 4px; 
+	background-color: var(--primary);
+	color: var(--primary-foreground); 
+	transition: background-color 200ms ease;
+	cursor: pointer; 
+
+	&:hover {
+		background-color: var(--primary-hover); 
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--primary); 
+		outline-offset: 2.5px; 
+	}
+}
+
+// CARD
+.card {
+	background-color: var(--card);
+	border: 2px solid var(--border); 
+	padding: 1rem; 
+	border-radius: 4px; 
+}
+
+// CART BADGE
+.cart-button {
+	position: relative;
+}
+
+.cart-badge {
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 1.1rem;
+	height: 1.1rem;
+	padding-inline: .25rem;
+	font-size: .65rem;
+	font-weight: 700;
+	border-radius: 999px;
+	pointer-events: none;
+	background-color: var(--primary);
+	color: var(--primary-foreground);
+
+	&.hidden {
+		display: none;
+	}
+
+	&.bump {
+		animation: badge-bump 300ms ease forwards;
+	}
+}
+
+// TOAST
+.cart-toast {
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	padding: .75rem 1.25rem;
+	z-index: 9999;
+	transform: translateY(0);
+	font-size: .9rem;
+	font-weight: 500;
+	border-radius: 8px;
+	background-color: var(--card);
+	border: 2px solid var(--primary);
+	color: var(--foreground);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
+	transition: opacity 300ms ease, transform 300ms ease;
+	opacity: 1;
+
+	&.hidden {
+		opacity: 0;
+		transform: translateY(.75rem);
+	}
+}
+
+// ACCORDION
+.accordion svg {
+	width: 1rem; 
+	height: 1rem; 
+}
+
+.open-accordion-icon {
+	display: block; 
+
+	&.hidden {
+		display: none; 
+	}
+}
+
+.close-accordion-icon {
+	display: block; 
+
+	&.hidden {
+		display: none; 
+	}
+}
+
+.accordion-toggler {
+	cursor: pointer;  
+}
+
+.accordion-content {
+	overflow: hidden;
+	transition: height 300ms ease;
+
+	&.hidden {
+		height: 0;
+	}
+}
+
+.accordion-content > :first-child {
+	padding-top: .875rem; 
+}

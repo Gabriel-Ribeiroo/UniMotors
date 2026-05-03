@@ -1,0 +1,53 @@
+@use "./resets.scss";
+@use "./variables.scss"; 
+@use "./animations.scss"; 
+@use "./components.scss";
+@use "./header.scss";
+@use "./aside.scss"; 
+@use "./main.scss";
+@use "./footer.scss"; 
+
+body, button, svg, div, li {
+	transition: 
+		background-color 200ms ease,
+		color 200ms ease,
+		border 200ms ease; 
+}
+
+body {
+	display: flex; 
+	flex-direction: column; 
+	min-height: 100vh; 
+	font-family: "Inter", sans-serif;
+	background-color: var(--background);
+	color: var(--foreground);
+}
+
+.layout {
+	flex-grow: 1; 
+}
+
+@media(min-width: variables.$lg-screen) {
+	.layout {
+		display: grid; 
+		grid-template-columns: 13.175rem 1fr; 
+	}
+}
+
+:root {
+	@include variables.dark-theme;
+}
+
+@media(prefers-color-scheme: light) {
+	:root {
+		@include variables.light-theme;
+	}
+}
+
+:root[data-theme="dark"] {
+	@include variables.dark-theme;
+}
+
+:root[data-theme="light"] {
+	@include variables.light-theme;
+}
