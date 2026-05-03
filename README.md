@@ -49,6 +49,7 @@ Simulação de uma loja virtual de motos com foco em HTML semântico, CSS modern
 | Navbar com Flexbox | ✅ |
 | Alternância de tema dark/light | ✅ |
 | Sidebar com abertura/fechamento | ✅ |
+| Fechar sidebar com tecla `Esc` | ✅ |
 | Overlay de fundo ao abrir sidebar | ✅ |
 | Accordion de categorias na sidebar | ✅ |
 | 10 motos exibidas em cards | ✅ |
