@@ -21,22 +21,39 @@ Simulação de uma loja virtual de motos com foco em HTML semântico, CSS modern
 /
 ├── index.html
 ├── css/
-│   └── style.css           # CSS compilado (não editar diretamente)
+│   └── style.css               # CSS compilado (não editar diretamente)
 ├── scss/
-│   ├── style.scss           # Arquivo principal (importa os parciais)
-│   ├── variables.scss       # Variáveis de cor, tipografia e breakpoints
-│   ├── resets.scss          # Reset / base global
-│   ├── animations.scss      # Animações (ex: bump do badge do carrinho)
-│   ├── components.scss      # Componentes reutilizáveis (botões, cards, toast)
-│   ├── header.scss          # Estilos do header
-│   ├── aside.scss           # Estilos da sidebar
-│   ├── main.scss            # Estilos da área principal / produtos
-│   └── footer.scss          # Estilos do footer
+│   ├── style.scss               # Arquivo principal (importa os parciais)
+│   ├── variables.scss           # Variáveis de cor, tipografia e breakpoints
+│   ├── resets.scss              # Reset / base global
+│   ├── animations.scss          # Animações (ex: bump do badge do carrinho)
+│   ├── components.scss          # Componentes reutilizáveis (botões, cards, toast)
+│   ├── header.scss              # Estilos do header
+│   ├── aside.scss               # Estilos da sidebar
+│   ├── main.scss                # Estilos da área principal / produtos
+│   └── footer.scss              # Estilos do footer
 ├── js/
-│   └── script.js            # Tema, sidebar, accordion e carrinho
+│   ├── script.js                # Entry point — importa e inicializa os módulos
+│   ├── theme.js                 # Alternância dark/light no <html>
+│   ├── sidebar.js               # Abertura, fechamento e overlay da sidebar
+│   ├── accordion.js             # Expand/recolhe categorias com troca de ícone
+│   ├── cartCount.js             # Incrementa o contador e anima o badge
+│   └── showCartToast.js         # Exibe o toast de confirmação
 ├── images/
-│   └── image-icon.svg
-└── package.json
+│   ├── bmw-m1000r.avif
+│   ├── bmw-s1000rr.webp
+│   ├── ducati-panigale-v4a.jpg
+│   ├── ducati-streetfighter-v4.webp
+│   ├── honda-cb1000r.webp
+│   ├── honda-cbr10000rr-r-fireblade.jpg
+│   ├── suzuki-gsx-r1000r.webp
+│   ├── suzuki-r1000.jpg
+│   ├── yamaha-mt10.jpg
+│   └── yamaha-yzf-r1s.jpg
+├── .gitignore
+├── LICENSE
+├── package.json
+└── yarn.lock
 ```
 
 ---
