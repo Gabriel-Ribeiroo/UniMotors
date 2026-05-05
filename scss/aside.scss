@@ -47,6 +47,22 @@
 		padding-inline: 1rem; 
 		padding-block: .875rem;
 		border-bottom: 2px solid var(--border);
+
+	}
+
+	.wa-qrcode {
+		width: 12.5rem; 
+		height: 12.5rem; 
+	}
+
+	.dropdown-container {
+		display: none; 
+	}
+
+	.dropdown-trigger {
+		width: 100%; 
+		font-size: 1rem; 
+		text-align: start; 
 	}
 
 	&.hidden {
@@ -126,5 +142,13 @@
 	#sidebar.hidden .sidebar__container {
 		margin-left: 0; 
 	}
+
+	.sidebar__categories-list .dropdown-container {
+		display: list-item; 
+	}
+
+	.wa-mobile-link {
+		display: none; 
+	}	
 }
 

@@ -2,6 +2,7 @@ import { toggleTheme } from "./theme.js"
 import { openSidebar, closeSidebar, closeSidebarOnEscPress } from "./sidebar.js"
 import { accordionOpenClose } from "./accordion.js"
 import { incrementCartProductsQuantity } from "./cartCount.js"
+import { toggleDropdown } from "./dropdown.js"
 
 const themeToggler = document.querySelector("[data-js='theme-toggler']")
 themeToggler.addEventListener("click", toggleTheme)
@@ -16,7 +17,6 @@ sidebarCloseButtons.forEach(close => close.addEventListener("click", closeSideba
 document.addEventListener("keydown", closeSidebarOnEscPress)
 
 // ACCORDION
-
 const accordions = document.querySelectorAll("[data-js='accordion']")
 
 accordions.forEach(accordion => {
@@ -35,3 +35,7 @@ const addToCartButtons = document.querySelectorAll("[data-js='add-to-cart']")
 addToCartButtons.forEach(button => {
 	button.addEventListener("click", () => incrementCartProductsQuantity(button))
 })
+
+// DROPDOWN 
+const dropdownTrigger = document.querySelector("[data-js='dropdown-trigger']")
+dropdownTrigger.addEventListener("click", toggleDropdown) 
