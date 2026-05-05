@@ -5,8 +5,11 @@
 }
 
 button {
+	font-family: "Inter", sans-serif; 
 	outline: none;
 	border: none; 
+	background-color: transparent; 
+	color: var(--foreground);
 }
 
 ul {
