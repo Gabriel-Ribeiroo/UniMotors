@@ -1,8 +1,11 @@
 @use "./variables.scss";
 
 #main {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 	padding-inline: clamp(1rem, 1rem + .5vw, 1.875rem);
-	padding-block: 2rem; 
+	padding-block: 2rem;
 }
 
 .main__products {

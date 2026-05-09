@@ -3,6 +3,7 @@ import { openSidebar, closeSidebar, closeSidebarOnEscPress } from "./sidebar.js"
 import { accordionOpenClose } from "./accordion.js"
 import { incrementCartProductsQuantity } from "./cartCount.js"
 import { toggleDropdown } from "./dropdown.js"
+import { nextSlide, prevSlide, goToSlide, startCarouselAutoPlay } from "./carousel.js"
 
 const themeToggler = document.querySelector("[data-js='theme-toggler']")
 themeToggler.addEventListener("click", toggleTheme)
@@ -36,6 +37,20 @@ addToCartButtons.forEach(button => {
 	button.addEventListener("click", () => incrementCartProductsQuantity(button))
 })
 
-// DROPDOWN 
+// DROPDOWN
 const dropdownTrigger = document.querySelector("[data-js='dropdown-trigger']")
-dropdownTrigger.addEventListener("click", toggleDropdown) 
+dropdownTrigger.addEventListener("click", toggleDropdown)
+
+// CAROUSEL
+const carouselPrev = document.querySelector("[data-js='carousel-prev']")
+const carouselNext = document.querySelector("[data-js='carousel-next']")
+const carouselIndicators = document.querySelectorAll("[data-js='carousel-indicator']")
+
+carouselPrev.addEventListener("click", prevSlide)
+carouselNext.addEventListener("click", nextSlide)
+
+carouselIndicators.forEach((indicator, index) => {
+	indicator.addEventListener("click", () => goToSlide(index))
+})
+
+startCarouselAutoPlay()
