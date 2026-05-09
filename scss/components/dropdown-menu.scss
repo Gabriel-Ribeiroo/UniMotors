@@ -1,0 +1,18 @@
+.dropdown-container {
+	position: relative
+}
+
+.dropdown-menu {
+	position: absolute;
+	padding: 1rem;
+	background-color: var(--background);
+	border: 2px solid var(--border);
+	border-radius: 4px;
+	top: calc(100%);
+	transition: opacity 100ms ease, transform 100ms ease;
+
+	&.hidden {
+		opacity: 0;
+		transform: scale(.8);
+	}
+}

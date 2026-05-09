@@ -1,0 +1,37 @@
+.accordion svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+.open-accordion-icon {
+	display: block;
+
+	&.hidden {
+		display: none;
+	}
+}
+
+.close-accordion-icon {
+	display: block;
+
+	&.hidden {
+		display: none;
+	}
+}
+
+.accordion-toggler {
+	cursor: pointer;
+}
+
+.accordion-content {
+	overflow: hidden;
+	transition: height 300ms ease;
+
+	&.hidden {
+		height: 0;
+	}
+}
+
+.accordion-content> :first-child {
+	padding-top: .875rem;
+}
