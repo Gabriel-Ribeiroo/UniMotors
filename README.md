@@ -37,6 +37,7 @@ Simulação de uma loja virtual de motos com foco em HTML semântico, CSS modern
 │   ├── theme.js                 # Alternância dark/light no <html>
 │   ├── sidebar.js               # Abertura, fechamento e overlay da sidebar
 │   ├── accordion.js             # Expand/recolhe categorias com troca de ícone
+│   ├── dropdown.js              # Abre/fecha o dropdown do QR Code do WhatsApp
 │   ├── cartCount.js             # Incrementa o contador e anima o badge
 │   └── showCartToast.js         # Exibe o toast de confirmação
 ├── images/
@@ -48,6 +49,7 @@ Simulação de uma loja virtual de motos com foco em HTML semântico, CSS modern
 │   ├── honda-cbr10000rr-r-fireblade.jpg
 │   ├── suzuki-gsx-r1000r.webp
 │   ├── suzuki-r1000.jpg
+│   ├── wa.png
 │   ├── yamaha-mt10.jpg
 │   └── yamaha-yzf-r1s.jpg
 ├── .gitignore
@@ -85,6 +87,7 @@ Simulação de uma loja virtual de motos com foco em HTML semântico, CSS modern
 | **Tema** | Alterna as classes `dark` / `light` no `<html>` |
 | **Sidebar** | Abre e fecha o menu lateral; o overlay também fecha ao clicar |
 | **Accordion** | Expande/recolhe a lista de categorias com troca de ícone |
+| **Dropdown** | Abre/fecha o dropdown com o QR Code do WhatsApp |
 | **Carrinho** | Incrementa o contador, anima o badge e exibe um toast com o nome da moto adicionada |
 
 ---
