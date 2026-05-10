@@ -17,5 +17,10 @@ export function incrementCartProductsQuantity(button) {
 
 	const productName = button.closest("[data-js='product-item']").querySelector("h3").textContent.trim()
 	showCartToast(productName)
-
 }
+
+const addToCartButtons = document.querySelectorAll("[data-js='add-to-cart']")
+
+addToCartButtons.forEach(button => {
+	button.addEventListener("click", () => incrementCartProductsQuantity(button))
+})

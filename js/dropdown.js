@@ -24,3 +24,5 @@ export function toggleDropdown(event) {
 
 	closeDropdown()
 }
+
+dropdownTrigger.addEventListener("click", toggleDropdown)

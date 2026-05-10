@@ -9,3 +9,6 @@ export function toggleTheme() {
 	root.setAttribute("data-theme", nextTheme)
 	localStorage.setItem("theme", nextTheme)
 }
+
+const themeToggler = document.querySelector("[data-js='theme-toggler']")
+themeToggler.addEventListener("click", toggleTheme)

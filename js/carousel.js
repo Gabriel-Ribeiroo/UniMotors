@@ -49,3 +49,16 @@ export function startCarouselAutoPlay() {
 		updateCarousel()
 	}, 5000)
 }
+
+const carouselPrev = document.querySelector("[data-js='carousel-prev']")
+const carouselNext = document.querySelector("[data-js='carousel-next']")
+const carouselIndicators = document.querySelectorAll("[data-js='carousel-indicator']")
+
+carouselPrev.addEventListener("click", prevSlide)
+carouselNext.addEventListener("click", nextSlide)
+
+carouselIndicators.forEach((indicator, index) => {
+	indicator.addEventListener("click", () => goToSlide(index))
+})
+
+startCarouselAutoPlay()
