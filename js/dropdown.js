@@ -1,9 +1,26 @@
 const dropdownMenu = document.querySelector("[data-js='dropdown-menu']")
+const dropdownTrigger = document.querySelector("[data-js='dropdown-trigger']")
 
-export function toggleDropdown() {
-    if(dropdownMenu.classList.contains("hidden")) {
-        return dropdownMenu.classList.remove("hidden")
-    }
+function handleClickOutside(event) {
+	const clickOutside = !dropdownMenu.contains(event.target) && !dropdownTrigger.contains(event.target)
 
-    dropdownMenu.classList.add("hidden")
+	if (clickOutside) closeDropdown()
+}
+
+function closeDropdown() {
+	dropdownMenu.classList.add("hidden")
+	document.removeEventListener("click", handleClickOutside)
+}
+
+function openDropdown() {
+	dropdownMenu.classList.remove("hidden")
+	document.addEventListener("click", handleClickOutside)
+} 
+
+export function toggleDropdown(event) {
+	if(dropdownMenu.classList.contains("hidden")) {
+		return openDropdown()
+	}
+
+	closeDropdown()
 }
