@@ -27,18 +27,28 @@ Simulação de uma loja virtual de motos com foco em HTML semântico, CSS modern
 │   ├── variables.scss           # Variáveis de cor, tipografia e breakpoints
 │   ├── resets.scss              # Reset / base global
 │   ├── animations.scss          # Animações (ex: bump do badge do carrinho)
-│   ├── components.scss          # Componentes reutilizáveis (botões, cards, toast)
 │   ├── header.scss              # Estilos do header
 │   ├── aside.scss               # Estilos da sidebar
 │   ├── main.scss                # Estilos da área principal / produtos
-│   └── footer.scss              # Estilos do footer
+│   ├── footer.scss              # Estilos do footer
+│   └── components/              # Componentes reutilizáveis (modulares)
+│       ├── index.scss           # Forward de todos os componentes
+│       ├── accordion.scss       # Estilos do accordion de categorias
+│       ├── badge.scss           # Badge do contador do carrinho
+│       ├── buttons.scss         # Botões reutilizáveis
+│       ├── card.scss            # Cards de produto
+│       ├── carousel.scss        # Carrossel de motos
+│       ├── dropdown-menu.scss   # Dropdown do QR Code do WhatsApp
+│       └── toast.scss           # Toast de confirmação
 ├── js/
 │   ├── script.js                # Entry point — importa e inicializa os módulos
 │   ├── theme.js                 # Alternância dark/light no <html>
 │   ├── sidebar.js               # Abertura, fechamento e overlay da sidebar
 │   ├── accordion.js             # Expand/recolhe categorias com troca de ícone
 │   ├── dropdown.js              # Abre/fecha o dropdown do QR Code do WhatsApp
+│   ├── carousel.js              # Controla o carrossel de motos
 │   ├── cartCount.js             # Incrementa o contador e anima o badge
+│   ├── onKeydown.js             # Listener global de teclas (ex: Esc)
 │   └── showCartToast.js         # Exibe o toast de confirmação
 ├── images/
 │   ├── bmw-m1000r.avif
@@ -99,7 +109,7 @@ O SASS segue uma estrutura modular com arquivos parciais:
 - **`variables.scss`** — CSS custom properties para dark/light theme + breakpoints SASS (`$sm-screen: 40rem`, `$md-screen: 48rem`, `$lg-screen: 64rem`)
 - **`resets.scss`** — normalização do CSS padrão do navegador
 - **`animations.scss`** — keyframes e classes de animação (ex: `.bump` no badge do carrinho)
-- **`components.scss`** — estilos de componentes reutilizáveis (botões, cards, toast de notificação)
+- **`components/`** — pasta com os componentes reutilizáveis em arquivos separados (`accordion`, `badge`, `buttons`, `card`, `carousel`, `dropdown-menu`, `toast`), agregados por `components/index.scss`
 - **`header.scss`**, **`aside.scss`**, **`main.scss`**, **`footer.scss`** — estilos por seção da página
 
 ---
