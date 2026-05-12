@@ -1,0 +1,60 @@
+.month-promotion {
+    position: fixed; 
+    inset: 0;
+    display: flex; 
+    justify-content: center;
+    align-items: center;  
+    z-index: 100; 
+}
+
+.month-promotion.hidden {
+   pointer-events: none; 
+
+    .month__card {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    .month__overlay {
+        opacity: 0;     
+    }
+}
+  
+.month__card {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; 
+    width: 100%; 
+    max-width: 26.875rem; 
+    overflow: hidden;
+    padding: 1rem; 
+    border: 2px solid var(--border); 
+    background-color: var(--background);
+    border-radius: 4px; 
+    z-index: 1000; 
+    transition: opacity 100ms ease, transform 100ms ease;  
+    
+    img {
+        object-fit: cover;
+		width: 100%; 
+    }
+}
+
+.month__old-value {
+    text-decoration: line-through;
+    color: rgb(187, 180, 180);
+    font-size: .875rem;
+}
+
+.month__promotion_paragraph {
+    font-size: .875rem; 
+}
+
+.month__overlay {
+    position: absolute; 
+    inset: 0; 
+    background-color: var(--overlay); 
+    z-index: 1; 
+    transition: opacity 100ms ease; 
+}
