@@ -31,7 +31,12 @@
 		</a>
 		
 		<div class="header__actions-container">
-			<button class="icon-button header__sidebar-open" aria-label="Abrir Menu" data-js="sidebar-open">
+			<button 
+				class="icon-button header__sidebar-open" 
+				aria-label="Abrir Menu" 
+				data-js="open-close-trigger" 
+				data-target="#sidebar"
+			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
 					stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<path d="M4 5h16" />
@@ -63,7 +68,7 @@
 	</header>
 
 	<div class="layout">
-		<aside id="sidebar" class="hidden" data-js="sidebar">	
+		<aside id="sidebar" class="hidden">	
 			<nav class="sidebar__container">
 				<div class="sidebar__accordion accordion" data-js="accordion">
 					<button class="sidebar__accordion-toggler accordion-toggler" data-js="accordion-toggler">
@@ -81,7 +86,7 @@
 						</svg>
 					</button>
 
-					<ul class="sidebar__accordion-content accordion-content hidden" aria-labelledby="sidebar-categories" data-js="accordion-content">
+					<ul class="sidebar__accordion-content accordion-content hidden" aria-labelledby="sidebar-categories" data-js="accordion-content" id="accordion-content">
 						<li>Ver tudo</li>
 						<li>Suzuki</li>
 						<li>Honda</li>
@@ -127,15 +132,17 @@
 					</li>
 
 					<li class="dropdown-container">
-						<button class="dropdown-trigger" data-js="dropdown-trigger">Fale conosco</button>
+						<button class="dropdown-trigger" data-js="open-close-trigger" data-target="#wa-dropdown">
+							Fale conosco
+						</button>
 
-						<div class="dropdown-menu hidden" data-js="dropdown-menu">
+						<div class="dropdown-menu hidden" id="wa-dropdown">
 							<img src="./images/wa.png" alt="Qr Code que leva para o Whatsapp" class="wa-qrcode">
 						</div>
 					</li>
 				</ul>
 	
-				<button aria-label="Fechar Menu" data-js="sidebar-close" class="sidebar__close-button">
+				<button aria-label="Fechar Menu" data-js="open-close-trigger" data-target="#sidebar" class="sidebar__close-button">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
 						stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M18 6 6 18" />
@@ -144,7 +151,7 @@
 				</button>
 			</nav>
 	
-			<div class="sidebar__overlay" aria-hidden="true" data-js="overlay"></div>
+			<div class="sidebar__overlay" aria-hidden="true" data-js="open-close-trigger" data-target="#sidebar"></div>
 		</aside>
 
 		<main id="main">
@@ -360,7 +367,7 @@
 	</footer>
 
 
-	<div class="month-promotion" data-js="toggle-visibility-content">
+	<div class="month-promotion" data-js="toggle-visibility-content" id="month-promotion">
 		<div class="month__card">
 			<div aria-hidden="true">
 				<img src="./images/suzuki-r1000.jpg" alt="ícone de imagem">
@@ -380,7 +387,7 @@
 			</button>
 		</div>
 
-		<div class="month__overlay" data-js="toggle-visibility-trigger"></div>
+		<div class="month__overlay" data-js="open-close-trigger" data-target="#month-promotion"></div>
 	</div>
 </body>
 </html>

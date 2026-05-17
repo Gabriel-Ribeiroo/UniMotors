@@ -1,7 +1,5 @@
 import "./theme.js"
 import "./accordion.js"
-import "./sidebar.js"
 import "./cartCount.js"
-import  "./dropdown.js"
 import "./carousel.js"
 import "./toggle-visibility.js"
