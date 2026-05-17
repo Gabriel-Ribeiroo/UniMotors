@@ -1,14 +1,14 @@
 .month-promotion {
-    position: fixed; 
+    position: fixed;
     inset: 0;
-    display: flex; 
+    display: flex;
     justify-content: center;
-    align-items: center;  
-    z-index: 10000; 
+    align-items: center;
+    z-index: 10000;
 }
 
 .month-promotion.hidden {
-   pointer-events: none; 
+    pointer-events: none;
 
     .month__card {
         opacity: 0;
@@ -16,45 +16,119 @@
     }
 
     .month__overlay {
-        opacity: 0;     
+        opacity: 0;
     }
 }
-  
+
 .month__card {
-    display: flex; 
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem; 
-    width: 100%; 
-    max-width: 26.875rem; 
+    gap: .75rem;
+    width: calc(100% - 2rem);
+    max-width: 26.875rem;
     overflow: hidden;
-    padding: 1rem; 
-    border: 2px solid var(--border); 
+    padding: 3rem 1.25rem 1.25rem;
+    border: 2px solid var(--border);
     background-color: var(--background);
-    border-radius: 4px; 
-    z-index: 1000; 
-    transition: opacity 100ms ease, transform 100ms ease;  
-    
-    img {
-        object-fit: cover;
-		width: 100%; 
+    border-radius: 8px;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, .45);
+    z-index: 1000;
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.month__close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 999px;
+    color: var(--foreground);
+    cursor: pointer;
+    transition: background-color 200ms ease;
+    z-index: 3;
+
+    &:hover {
+        background-color: var(--button-hover);
     }
+
+    &:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+}
+
+.month__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: var(--skeleton);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.month__tag {
+    padding: .25rem .65rem;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.month__card h3 {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.month__prices {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: .75rem;
+    flex-wrap: wrap;
 }
 
 .month__old-value {
     text-decoration: line-through;
-    color: rgb(187, 180, 180);
+    color: var(--skeleton);
     font-size: .875rem;
 }
 
-.month__promotion_paragraph {
-    font-size: .875rem; 
+.month__new-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.month__card .button {
+    width: 100%;
+    margin-top: .25rem;
 }
 
 .month__overlay {
-    position: absolute; 
-    inset: 0; 
-    background-color: var(--overlay); 
-    z-index: 1; 
-    transition: opacity 100ms ease; 
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay);
+    z-index: 1;
+    transition: opacity 150ms ease;
 }

@@ -367,23 +367,31 @@
 	</footer>
 
 
-	<div class="month-promotion" data-js="toggle-visibility-content" id="month-promotion">
+	<div class="month-promotion" data-js="toggle-visibility-content" id="month-promotion" role="dialog" aria-modal="true" aria-labelledby="month-promotion-title">
 		<div class="month__card">
-			<div aria-hidden="true">
-				<img src="./images/suzuki-r1000.jpg" alt="ícone de imagem">
+			<button class="month__close" aria-label="Fechar promoção" data-js="open-close-trigger" data-target="#month-promotion">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+					stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M18 6 6 18" />
+					<path d="m6 6 12 12" />
+				</svg>
+			</button>
+
+			<div class="month__media" aria-hidden="true">
+				<img src="./images/suzuki-r1000.jpg" alt="">
 			</div>
-						
-			<p class="month__promotion_paragraph">Promoção do Mês!</p>
 
-			<h3>Suzuki Hayabusa</h3>
+			<span class="month__tag">Promoção do Mês</span>
 
-			<div>
+			<h3 id="month-promotion-title">Suzuki Hayabusa</h3>
+
+			<div class="month__prices">
 				<p class="month__old-value">R$ 130.000,00</p>
-			    <p class="month_new-value">R$ 90.000,00</p>
+				<p class="month__new-value">R$ 90.000,00</p>
 			</div>
 
 			<button class="button" data-js="add-to-cart">
-				Adicionar ao carrinho 
+				Adicionar ao carrinho
 			</button>
 		</div>
 
