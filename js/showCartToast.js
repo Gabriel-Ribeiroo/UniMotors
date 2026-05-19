@@ -2,7 +2,7 @@ let toastTimeout
 
 document.fonts.ready.then(() => {})
 
-export function showCartToast(productName) {
+export function showCartToast(message) {
 	const existing = document.querySelector(".cart-toast")
 	if (existing) existing.remove()
 	clearTimeout(toastTimeout)
@@ -11,7 +11,7 @@ export function showCartToast(productName) {
 	toast.className = "cart-toast hidden"
 	toast.setAttribute("role", "status")
 	toast.setAttribute("aria-live", "polite")
-	toast.textContent = `"${productName}" adicionado ao carrinho`
+	toast.textContent = message
 	document.body.appendChild(toast)
 
 	requestAnimationFrame(() => requestAnimationFrame(() => toast.classList.remove("hidden")))

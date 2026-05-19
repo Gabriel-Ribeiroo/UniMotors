@@ -45,7 +45,7 @@
 				</svg>
 			</button>
 
-			<button class="icon-button cart-button" aria-label="Carrinho de compras" data-js="cart-button">
+			<button class="icon-button cart-button" aria-label="Carrinho de compras" data-js="open-close-trigger" data-target="#cart-drawer">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
 					stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<circle cx="8" cy="21" r="1" />
@@ -397,5 +397,49 @@
 
 		<div class="month__overlay" data-js="open-close-trigger" data-target="#month-promotion"></div>
 	</div>
+
+	<aside class="cart-drawer hidden" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+		<div class="cart-drawer__panel">
+			<div class="cart-drawer__header">
+				<h2 id="cart-drawer-title">Seu carrinho</h2>
+
+				<button class="cart-drawer__close" aria-label="Fechar carrinho" data-js="open-close-trigger" data-target="#cart-drawer">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+						stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M18 6 6 18" />
+						<path d="m6 6 12 12" />
+					</svg>
+				</button>
+			</div>
+
+			<div class="cart-drawer__body">
+				<div class="cart-drawer__empty" data-js="cart-empty">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+						stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="8" cy="21" r="1" />
+						<circle cx="19" cy="21" r="1" />
+						<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+					</svg>
+					<p>Seu carrinho está vazio</p>
+					<span>Adicione produtos para vê-los aqui</span>
+				</div>
+
+				<ul class="cart-drawer__list hidden" data-js="cart-list"></ul>
+			</div>
+
+			<footer class="cart-drawer__footer">
+				<div class="cart-drawer__total">
+					<span>Total</span>
+					<strong data-js="cart-total">R$ 0,00</strong>
+				</div>
+
+				<button class="button cart-drawer__checkout" data-js="cart-checkout" disabled>
+					Finalizar compra
+				</button>
+			</footer>
+		</div>
+
+		<div class="cart-drawer__overlay" data-js="open-close-trigger" data-target="#cart-drawer"></div>
+	</aside>
 </body>
 </html>
