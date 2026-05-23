@@ -1,0 +1,21 @@
+.input {
+	padding-inline: .875rem;
+	padding-block: .55rem;
+	font-family: inherit;
+	font-size: .875rem;
+	background-color: var(--background);
+	border: 2px solid var(--border);
+	border-radius: 4px;
+	color: var(--foreground);
+	outline: none;
+	transition: border-color 200ms ease;
+
+	&::placeholder {
+		color: var(--foreground);
+		opacity: .5;
+	}
+
+	&:focus-visible {
+		border-color: var(--primary);
+	}
+}
