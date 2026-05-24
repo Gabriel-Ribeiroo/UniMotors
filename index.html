@@ -31,23 +31,26 @@
 		</a>
 		
 		<div class="header__actions-container">
-			<button 
-				class="icon-button header__sidebar-open" 
-				aria-label="Abrir Menu" 
-				data-js="open-close-trigger" 
+			<button
+				type="button"
+				class="icon-button header__sidebar-open"
+				aria-label="Abrir Menu"
+				aria-expanded="false"
+				aria-controls="sidebar"
+				data-js="open-close-trigger"
 				data-target="#sidebar"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-					stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 					<path d="M4 5h16" />
 					<path d="M4 12h16" />
 					<path d="M4 19h16" />
 				</svg>
 			</button>
 
-			<button class="icon-button cart-button" aria-label="Carrinho de compras" data-js="open-close-trigger" data-target="#cart-drawer">
+			<button type="button" class="icon-button cart-button" aria-label="Carrinho de compras" aria-expanded="false" aria-controls="cart-drawer" data-js="open-close-trigger" data-target="#cart-drawer">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-					stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 					<circle cx="8" cy="21" r="1" />
 					<circle cx="19" cy="21" r="1" />
 					<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
@@ -55,8 +58,8 @@
 				<span class="cart-badge hidden" data-js="cart-badge" aria-live="polite" aria-atomic="true">0</span>
 			</button>
 
-			<button class="icon-button" aria-label="Mudar tema" data-js="theme-toggler">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<button type="button" class="icon-button" aria-label="Mudar tema" data-js="theme-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 					<path d="M12 2v2" />
 					<path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715" />
 					<path d="M16 12a4 4 0 0 0-4-4" />
@@ -68,89 +71,111 @@
 	</header>
 
 	<div class="layout">
-		<aside id="sidebar" class="hidden">	
-			<nav class="sidebar__container">
+		<aside id="sidebar" class="hidden">
+			<nav class="sidebar__container" aria-label="Menu lateral">
 				<div class="sidebar__accordion accordion" data-js="accordion">
-					<button class="sidebar__accordion-toggler accordion-toggler" data-js="accordion-toggler">
-						Marcas 
+					<button
+						type="button"
+						id="accordion-brands-toggler"
+						class="sidebar__accordion-toggler accordion-toggler"
+						aria-expanded="false"
+						aria-controls="accordion-brands"
+						data-js="accordion-toggler"
+					>
+						Marcas
 
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="open-accordion-icon" data-js="open-accordion-icon">
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="open-accordion-icon" data-js="open-accordion-icon" aria-hidden="true">
 							<path d="M5 12h14" />
 							<path d="M12 5v14" />
 						</svg>
 
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-accordion-icon hidden" data-js="close-accordion-icon">
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-accordion-icon hidden" data-js="close-accordion-icon" aria-hidden="true">
 							<path d="M5 12h14" />
 						</svg>
 					</button>
 
-					<ul class="sidebar__accordion-content accordion-content hidden" aria-labelledby="sidebar-categories" data-js="accordion-content" id="accordion-content">
-						<li>Ver tudo</li>
-						<li>Suzuki</li>
-						<li>Honda</li>
-						<li>Yamaha</li>
-						<li>Ducati</li>
-						<li>Bmw</li>
+					<ul class="sidebar__accordion-content accordion-content hidden" id="accordion-brands" aria-labelledby="accordion-brands-toggler" data-js="accordion-content">
+						<li><a href="#">Ver tudo</a></li>
+						<li><a href="#">Suzuki</a></li>
+						<li><a href="#">Honda</a></li>
+						<li><a href="#">Yamaha</a></li>
+						<li><a href="#">Ducati</a></li>
+						<li><a href="#">Bmw</a></li>
 					</ul>
 				</div>
 
 				<div class="sidebar__accordion accordion" data-js="accordion">
-					<button class="sidebar__accordion-toggler accordion-toggler" data-js="accordion-toggler">
+					<button
+						type="button"
+						id="accordion-promotions-toggler"
+						class="sidebar__accordion-toggler accordion-toggler"
+						aria-expanded="false"
+						aria-controls="accordion-promotions"
+						data-js="accordion-toggler"
+					>
 						Promoções
-				
+
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
 							stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="open-accordion-icon"
-							data-js="open-accordion-icon">
+							data-js="open-accordion-icon" aria-hidden="true">
 							<path d="M5 12h14" />
 							<path d="M12 5v14" />
 						</svg>
-				
+
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
 							stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-accordion-icon hidden"
-							data-js="close-accordion-icon">
+							data-js="close-accordion-icon" aria-hidden="true">
 							<path d="M5 12h14" />
 						</svg>
 					</button>
-				
-					<ul class="sidebar__accordion-content accordion-content hidden" aria-labelledby="sidebar-categories"
-						data-js="accordion-content">
-						<li>Leve dois pague um</li>
-						<li>Até 50% de desconto</li>
-						<li>Combos</li>
+
+					<ul class="sidebar__accordion-content accordion-content hidden" id="accordion-promotions" aria-labelledby="accordion-promotions-toggler" data-js="accordion-content">
+						<li><a href="#">Leve dois pague um</a></li>
+						<li><a href="#">Até 50% de desconto</a></li>
+						<li><a href="#">Combos</a></li>
 					</ul>
 				</div>
 
-				<ul class="sidebar__categories-list" aria-labelledby="sidebar-categories">
-					<li>Sobre nós</li>
-					<li>Descontos</li>
-					<li>Campeãs de venda</li>
+				<ul class="sidebar__categories-list">
+					<li><a href="#">Sobre nós</a></li>
+					<li><a href="#">Descontos</a></li>
+					<li><a href="#">Campeãs de venda</a></li>
 
 					<li class="wa-mobile-link">
-						<a target="__blank" href="https://wa.me/5511973713429?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida.">Fale conosco</a>
+						<a target="_blank" rel="noopener" href="https://wa.me/5511973713429?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida.">Fale conosco</a>
 					</li>
 
 					<li class="dropdown-container">
-						<button class="dropdown-trigger" data-js="open-close-trigger" data-target="#wa-dropdown">
+						<button
+							type="button"
+							class="dropdown-trigger"
+							aria-haspopup="true"
+							aria-expanded="false"
+							aria-controls="wa-dropdown"
+							data-js="open-close-trigger"
+							data-target="#wa-dropdown"
+						>
 							Fale conosco
 						</button>
 
-						<div class="dropdown-menu hidden" id="wa-dropdown">
-							<img src="./images/wa.png" alt="Qr Code que leva para o Whatsapp" class="wa-qrcode">
+						<div class="dropdown-menu hidden" id="wa-dropdown" role="group" aria-label="Contato pelo WhatsApp">
+							<img src="./images/wa.png" alt="QR Code do WhatsApp da Unimotors" class="wa-qrcode">
+							<a class="dropdown-menu__link" target="_blank" rel="noopener" href="https://wa.me/5511973713429?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida.">Abrir conversa</a>
 						</div>
 					</li>
 				</ul>
-	
-				<button aria-label="Fechar Menu" data-js="open-close-trigger" data-target="#sidebar" class="sidebar__close-button">
+
+				<button type="button" aria-label="Fechar Menu" data-js="open-close-trigger" data-target="#sidebar" class="sidebar__close-button">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-						stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 						<path d="M18 6 6 18" />
 						<path d="m6 6 12 12" />
 					</svg>
 				</button>
 			</nav>
-	
+
 			<div class="sidebar__overlay" aria-hidden="true" data-js="open-close-trigger" data-target="#sidebar"></div>
 		</aside>
 
@@ -471,9 +496,9 @@
 
 	<div class="month-promotion" id="month-promotion" role="dialog" aria-modal="true" aria-labelledby="month-promotion-title">
 		<div class="month__card">
-			<button class="month__close" aria-label="Fechar promoção" data-js="open-close-trigger" data-target="#month-promotion">
+			<button type="button" class="month__close" aria-label="Fechar promoção" data-js="open-close-trigger" data-target="#month-promotion">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-					stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 					<path d="M18 6 6 18" />
 					<path d="m6 6 12 12" />
 				</svg>
@@ -505,9 +530,10 @@
 			<div class="cart-drawer__header">
 				<h2 id="cart-drawer-title">Seu carrinho</h2>
 
-				<button class="cart-drawer__close" aria-label="Fechar carrinho" data-js="open-close-trigger" data-target="#cart-drawer">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-						stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<button class="cart-drawer__close" 	aria-label="Fechar carrinho" 	data-js="open-close-trigger" 			    	data-target="#cart-drawer"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" 		fill="none" stroke="currentColor"
+						stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 						<path d="M18 6 6 18" />
 						<path d="m6 6 12 12" />
 					</svg>
